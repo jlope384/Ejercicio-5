@@ -2,9 +2,12 @@ package UI;
 
 import java.util.Scanner;
 
+import Controlador.ReferenciaBibliografica;
+
+//import Controlador.CSVManager;
 public class DriverProgram {
 
-    public static void maim(String[] args) {
+    public static void main(String[] args) {
         String nombre;
         String editorial;
         String anoPublicacion;
@@ -19,6 +22,7 @@ public class DriverProgram {
         String numeroPaginas;
 
         Scanner teclado = new Scanner(System.in);
+        ReferenciaBibliografica referencias = new ReferenciaBibliografica();
         boolean ciclo = true;
         while (ciclo) {
             System.out.println("---Amparo Codina de Campollo ---");
@@ -52,6 +56,9 @@ public class DriverProgram {
                         System.out.println("Autor:");
                         autor = teclado.nextLine();
                         tipo = "libro";
+                        referencias.AddMaterialBibliograficoLibro(tipo, nombre, editorial, anoPublicacion, genero,
+                                autor);
+
                     }
                     if (MateBibl == 2) {
                         System.out.println("2. Periodico");
@@ -66,6 +73,8 @@ public class DriverProgram {
                         System.out.println("Autor:");
                         autor = teclado.nextLine();
                         tipo = "Periodico";
+                        referencias.AddMaterialBibliograficoPeriodico(tipo, nombre, editorial, anoPublicacion,
+                                titularPeriodico, autor);
                     }
                     if (MateBibl == 3) {
                         System.out.println("3. Tesis");
@@ -75,9 +84,13 @@ public class DriverProgram {
                         anoPublicacion = teclado.nextLine();
                         System.out.println("Nombre de la Institucion Academica:");
                         institucionAcademica = teclado.nextLine();
+                        System.out.println("Genero:");
+                        genero = teclado.nextLine();
                         System.out.println("Autor:");
                         autor = teclado.nextLine();
                         tipo = "Tesis";
+                        referencias.AddMaterialBibliograficoTesis(tipo, nombre, institucionAcademica, anoPublicacion,
+                                genero, autor);
                     }
                     if (MateBibl == 4) {
                         System.out.println("4. DVD");
@@ -87,11 +100,15 @@ public class DriverProgram {
                         productora = teclado.nextLine();
                         System.out.println("Año de Publicacion:");
                         anoPublicacion = teclado.nextLine();
+                        System.out.println("Genero:");
+                        genero = teclado.nextLine();
                         System.out.println("Director:");
                         autor = teclado.nextLine();
                         System.out.println("Duracion:");
                         duracion = teclado.nextLine();
                         tipo = "DVD";
+                        referencias.AddMaterialBibliograficoDVD(tipo, nombre, productora, anoPublicacion, genero,
+                                duracion, autor);
                     }
                     if (MateBibl == 5) {
                         System.out.println("5. Articulo Cientifico");
@@ -101,6 +118,8 @@ public class DriverProgram {
                         editorial = teclado.nextLine();
                         System.out.println("Año de Publicacion:");
                         anoPublicacion = teclado.nextLine();
+                        System.out.println("Genero Cientifico:");
+                        genero = teclado.nextLine();
                         System.out.println("Numero de Paginas:");
                         numeroPaginas = teclado.nextLine();
                         System.out.println("Volumen del Articulo:");
@@ -108,24 +127,37 @@ public class DriverProgram {
                         System.out.println("Autor:");
                         autor = teclado.nextLine();
                         tipo = "Articulo Cientifico";
+                        referencias.AddMaterialBibliograficoArticuloCientifico(tipo, nombre, editorial, anoPublicacion,
+                                genero, numeroPaginas, volumen, autor);
                     }
                     if (MateBibl == 6) {
                         System.out.println("5. Otros");
                         System.out.println("Nombre del Material Bibliografico");
                         nombre = teclado.nextLine();
-                        System.out.println("Titulo del Material Bibliografico:");
+                        System.out.println("Distribuidora del Material Bibliografico:");
                         editorial = teclado.nextLine();
                         System.out.println("Año de Publicacion:");
                         anoPublicacion = teclado.nextLine();
+                        System.out.println("Genero:");
+                        genero = teclado.nextLine();
                         System.out.println("Autor:");
                         autor = teclado.nextLine();
                         System.out.println("Tipo de Material Bibliografico");
                         tipo = teclado.nextLine();
+                        referencias.AddMaterialBibliograficoOtros(tipo, nombre, editorial, anoPublicacion, genero,
+                                autor);
                     }
                     break;
-                case 2:
+                case 2: // Llevar el conteo de materiales por género, autor y año de publicación de
+                        // material bibliográfico
                     break;
-                case 3:
+                case 3: // Mostrar catálogo disponible con sus citas en formato APA.
+                    referencias.generarCitaLibro();
+                    referencias.generarCitaDVD();
+                    referencias.generarCitaArticuloCientifico();
+                    referencias.generarCitaPeriodico();
+                    referencias.generarCitaTesis();
+                    referencias.generarCitaOtros();
                     break;
                 case 4:
                     ciclo = false;

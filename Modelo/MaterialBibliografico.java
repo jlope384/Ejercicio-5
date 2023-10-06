@@ -64,4 +64,28 @@ public class MaterialBibliografico {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    public String getDuracion() {
+        return null;
+    }
+
+    public String getProductora() {
+        return null;
+    }
+
+    public String getVolumen() {
+        return null;
+    }
+
+    public String getNumeroPaginas() {
+        return null;
+    }
+
+    public String getInstitucionAcademica() {
+        return null;
+    }
+
+    public String getTitularPeriodico() {
+        return null;
+    }
 }
