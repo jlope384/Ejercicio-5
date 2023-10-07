@@ -22,6 +22,7 @@ public class DriverProgram {
         String numeroPaginas;
 
         Scanner teclado = new Scanner(System.in);
+        // Use the Scanner object here
         ReferenciaBibliografica referencias = new ReferenciaBibliografica();
         boolean ciclo = true;
         while (ciclo) {
@@ -29,7 +30,7 @@ public class DriverProgram {
             System.out.println("1. Agregar Material Bibliografico");
             System.out.println("2. Catalogo Disponible");
             System.out.println("3. Conteo de material bibliografico");
-            System.out.println("5. Salir");
+            System.out.println("4. Salir");
             int opcion = teclado.nextInt();
 
             switch (opcion) {
@@ -150,7 +151,9 @@ public class DriverProgram {
                     break;
                 case 2: // Llevar el conteo de materiales por género, autor y año de publicación de
                         // material bibliográfico
-                    break;
+                    referencias.mostrarCatalogo();
+                        break;
+
                 case 3: // Mostrar catálogo disponible con sus citas en formato APA.
                     referencias.generarCitaLibro();
                     referencias.generarCitaDVD();
@@ -161,6 +164,7 @@ public class DriverProgram {
                     break;
                 case 4:
                     ciclo = false;
+                teclado.close();
             }
         }
     }

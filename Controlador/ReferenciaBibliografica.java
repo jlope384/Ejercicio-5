@@ -250,4 +250,45 @@ public class ReferenciaBibliografica {
         }
         return cita.toString();
     }
+
+
+    public void mostrarCatalogo() {
+        System.out.println("Catálogo de Materiales Bibliográficos:");
+
+        // Mostrar libros
+        System.out.println("Libros:");
+        for (MaterialBibliografico libro : libro) {
+            System.out.println(libro.toString());
+        }
+
+        // Mostrar DVDs
+        System.out.println("DVDs:");
+        for (MaterialBibliografico dvd : DVD) {
+            System.out.println(dvd.toString());
+        }
+
+        // Mostrar Articulos Cientificos
+        System.out.println("Articulos Cientificos:");
+        for (MaterialBibliografico articuloCientifico : ArticuloCientifico) {
+            System.out.println(articuloCientifico.toString());
+        }
+
+        // Mostrar Periodicos
+        System.out.println("Periodicos:");
+        for (MaterialBibliografico periodico : Periodico) {
+            System.out.println(periodico.toString());
+        }
+
+        // Mostrar Tesis
+        System.out.println("Tesis:");
+        for (MaterialBibliografico tesis : Tesis) {
+            System.out.println(tesis.toString());
+        }
+
+        // Mostrar Otros
+        System.out.println("Otros:");
+        for (MaterialBibliografico otros : Otros) {
+            System.out.println(otros.toString());
+        }
+    }
 }
