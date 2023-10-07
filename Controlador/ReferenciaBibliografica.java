@@ -32,7 +32,7 @@ public class ReferenciaBibliografica {
 
     public void AddMaterialBibliograficoPeriodico(String tipo, String nombre, String editorial, String fechaPublicacion,
             String titularPeriodico, String autor) {
-        Periodico periodico = new Periodico(tipo, nombre, editorial, fechaPublicacion, titularPeriodico, autor);
+        Periodico periodico = new Periodico(tipo, nombre, editorial, fechaPublicacion, titularPeriodico, autor, autor);
         Periodico.add(periodico);
     }
 
@@ -291,4 +291,21 @@ public class ReferenciaBibliografica {
             System.out.println(otros.toString());
         }
     }
+    
+    // Agregar un material bibliográfico al catálogo
+    public void agregarMaterialBibliografico(MaterialBibliografico material) {
+        if (material instanceof Libro) {
+            libro.add(material);
+        } else if (material instanceof DVD) {
+            DVD.add(material);
+        } else if (material instanceof ArticuloCientifico) {
+            ArticuloCientifico.add(material);
+        } else if (material instanceof Periodico) {
+            Periodico.add(material);
+        } else if (material instanceof Tesis) {
+            Tesis.add(material);
+        } else if (material instanceof Otros) {
+            Otros.add(material);
+        }
+    }   
 }
