@@ -48,10 +48,12 @@ public class CSVManager {
                 } else if (tipo.equalsIgnoreCase("Articulo Cientifico")) {
                     String numeroPaginas = data[6];
                     String volumen = data[7];
-                    material = new ArticuloCientifico(tipo, nombre, editorial, fechaPublicacion, genero, numeroPaginas, volumen, autor);
+                    material = new ArticuloCientifico(tipo, nombre, editorial, fechaPublicacion, genero, numeroPaginas,
+                            volumen, autor);
                 } else if (tipo.equalsIgnoreCase("Periodico")) {
                     String titularPeriodico = data[6];
-                    material = new Periodico(tipo, nombre, editorial, fechaPublicacion, genero, titularPeriodico, autor);
+                    material = new Periodico(tipo, nombre, editorial, fechaPublicacion, genero, titularPeriodico,
+                            autor);
                 } else if (tipo.equalsIgnoreCase("Tesis")) {
                     String institucionAcademica = data[6];
                     material = new Tesis(tipo, nombre, editorial, fechaPublicacion, genero, institucionAcademica);
