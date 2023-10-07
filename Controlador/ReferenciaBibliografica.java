@@ -307,5 +307,17 @@ public class ReferenciaBibliografica {
         } else if (material instanceof Otros) {
             Otros.add(material);
         }
+    }
+    //Necesito saber cuanto material bibliografico hay en el catalogo
+    public int contarMaterialBibliografico() {
+        int cantidad = 0;
+        cantidad += libro.size();
+        cantidad += DVD.size();
+        cantidad += ArticuloCientifico.size();
+        cantidad += Periodico.size();
+        cantidad += Tesis.size();
+        cantidad += Otros.size();
+        System.out.println("Hay " + cantidad + " materiales bibliograficos en el catalogo.");
+        return cantidad;
     }   
 }

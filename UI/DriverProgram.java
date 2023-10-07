@@ -155,12 +155,7 @@ public class DriverProgram {
                         break;
 
                 case 3: // Mostrar catálogo disponible con sus citas en formato APA.
-                    referencias.generarCitaLibro();
-                    referencias.generarCitaDVD();
-                    referencias.generarCitaArticuloCientifico();
-                    referencias.generarCitaPeriodico();
-                    referencias.generarCitaTesis();
-                    referencias.generarCitaOtros();
+                    referencias.contarMaterialBibliografico();
                     break;
                 case 4:
                     ciclo = false;
