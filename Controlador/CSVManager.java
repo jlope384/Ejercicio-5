@@ -21,7 +21,7 @@ public class CSVManager {
         // Crear una instancia de ReferenciaBibliografica
         ReferenciaBibliografica referencias = new ReferenciaBibliografica();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("Catalogo.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("Controlador/Catalogo.csv"))) {
             // Leemos la primera línea que generalmente contiene los nombres de las columnas
             line = br.readLine();
 
